@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A4E66B2A1FA52B029C4CF6F /* Pods_FatSecretTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AE595385794DC381AFA8003 /* Pods_FatSecretTests.framework */; };
 		6BDA2F052567DE9D00843F45 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BDA2F042567DE9D00843F45 /* AppDelegate.swift */; };
 		6BDA2F072567DE9D00843F45 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BDA2F062567DE9D00843F45 /* SceneDelegate.swift */; };
 		6BDA2F092567DE9D00843F45 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BDA2F082567DE9D00843F45 /* ViewController.swift */; };
@@ -16,6 +17,12 @@
 		6BDA2F1C2567DE9E00843F45 /* FatSecretTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BDA2F1B2567DE9E00843F45 /* FatSecretTests.swift */; };
 		6BDA2F272567DE9E00843F45 /* FatSecretUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BDA2F262567DE9E00843F45 /* FatSecretUITests.swift */; };
 		6BE6EE232569028D00063377 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE6EE222569028D00063377 /* AuthViewController.swift */; };
+		6BE6EE282569080100063377 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6BE6EE272569080100063377 /* GoogleService-Info.plist */; };
+		6BE6EE6525690F7200063377 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE6EE6425690F7200063377 /* AuthViewModel.swift */; };
+		6BE6EE6A256917DF00063377 /* AuthRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE6EE69256917DF00063377 /* AuthRepository.swift */; };
+		6BE6EE6F25691E8A00063377 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE6EE6E25691E8A00063377 /* Result.swift */; };
+		BFA7C67773AF2B1760E0FCEF /* Pods_FatSecret_FatSecretUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BB3D1C14551362ECDDD233F /* Pods_FatSecret_FatSecretUITests.framework */; };
+		C45562B042DEFB6062C1596C /* Pods_FatSecret.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 724A09AFC2542E10D7EB5398 /* Pods_FatSecret.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +43,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		12BEE7C51AC8BE6E6A3EDE95 /* Pods-FatSecret.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FatSecret.debug.xcconfig"; path = "Target Support Files/Pods-FatSecret/Pods-FatSecret.debug.xcconfig"; sourceTree = "<group>"; };
+		1D5058EDD8D1D5C921BC1DC0 /* Pods-FatSecret.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FatSecret.release.xcconfig"; path = "Target Support Files/Pods-FatSecret/Pods-FatSecret.release.xcconfig"; sourceTree = "<group>"; };
+		21F38E0569CB1E884510CE74 /* Pods-FatSecret-FatSecretUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FatSecret-FatSecretUITests.debug.xcconfig"; path = "Target Support Files/Pods-FatSecret-FatSecretUITests/Pods-FatSecret-FatSecretUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		617ED0251279E87349EB5D54 /* Pods-FatSecret-FatSecretUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FatSecret-FatSecretUITests.release.xcconfig"; path = "Target Support Files/Pods-FatSecret-FatSecretUITests/Pods-FatSecret-FatSecretUITests.release.xcconfig"; sourceTree = "<group>"; };
+		6564E759812B0E6889398910 /* Pods-FatSecretTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FatSecretTests.release.xcconfig"; path = "Target Support Files/Pods-FatSecretTests/Pods-FatSecretTests.release.xcconfig"; sourceTree = "<group>"; };
 		6BDA2F012567DE9D00843F45 /* FatSecret.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FatSecret.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BDA2F042567DE9D00843F45 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6BDA2F062567DE9D00843F45 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -51,6 +63,14 @@
 		6BDA2F262567DE9E00843F45 /* FatSecretUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FatSecretUITests.swift; sourceTree = "<group>"; };
 		6BDA2F282567DE9E00843F45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6BE6EE222569028D00063377 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
+		6BE6EE272569080100063377 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		6BE6EE6425690F7200063377 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		6BE6EE69256917DF00063377 /* AuthRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRepository.swift; sourceTree = "<group>"; };
+		6BE6EE6E25691E8A00063377 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		724A09AFC2542E10D7EB5398 /* Pods_FatSecret.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FatSecret.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8BB3D1C14551362ECDDD233F /* Pods_FatSecret_FatSecretUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FatSecret_FatSecretUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9AE595385794DC381AFA8003 /* Pods_FatSecretTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FatSecretTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FDE50D84D18590106279F44A /* Pods-FatSecretTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FatSecretTests.debug.xcconfig"; path = "Target Support Files/Pods-FatSecretTests/Pods-FatSecretTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C45562B042DEFB6062C1596C /* Pods_FatSecret.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A4E66B2A1FA52B029C4CF6F /* Pods_FatSecretTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,12 +94,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFA7C67773AF2B1760E0FCEF /* Pods_FatSecret_FatSecretUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		55D941399D461D77ABA50CDC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				12BEE7C51AC8BE6E6A3EDE95 /* Pods-FatSecret.debug.xcconfig */,
+				1D5058EDD8D1D5C921BC1DC0 /* Pods-FatSecret.release.xcconfig */,
+				21F38E0569CB1E884510CE74 /* Pods-FatSecret-FatSecretUITests.debug.xcconfig */,
+				617ED0251279E87349EB5D54 /* Pods-FatSecret-FatSecretUITests.release.xcconfig */,
+				FDE50D84D18590106279F44A /* Pods-FatSecretTests.debug.xcconfig */,
+				6564E759812B0E6889398910 /* Pods-FatSecretTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		6130039C4B45F6C8BCDB3240 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				724A09AFC2542E10D7EB5398 /* Pods_FatSecret.framework */,
+				8BB3D1C14551362ECDDD233F /* Pods_FatSecret_FatSecretUITests.framework */,
+				9AE595385794DC381AFA8003 /* Pods_FatSecretTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		6BDA2EF82567DE9D00843F45 = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +131,8 @@
 				6BDA2F1A2567DE9E00843F45 /* FatSecretTests */,
 				6BDA2F252567DE9E00843F45 /* FatSecretUITests */,
 				6BDA2F022567DE9D00843F45 /* Products */,
+				55D941399D461D77ABA50CDC /* Pods */,
+				6130039C4B45F6C8BCDB3240 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -109,6 +157,10 @@
 				6BDA2F0F2567DE9E00843F45 /* LaunchScreen.storyboard */,
 				6BDA2F122567DE9E00843F45 /* Info.plist */,
 				6BE6EE222569028D00063377 /* AuthViewController.swift */,
+				6BE6EE272569080100063377 /* GoogleService-Info.plist */,
+				6BE6EE6425690F7200063377 /* AuthViewModel.swift */,
+				6BE6EE69256917DF00063377 /* AuthRepository.swift */,
+				6BE6EE6E25691E8A00063377 /* Result.swift */,
 			);
 			path = FatSecret;
 			sourceTree = "<group>";
@@ -138,9 +190,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6BDA2F2B2567DE9E00843F45 /* Build configuration list for PBXNativeTarget "FatSecret" */;
 			buildPhases = (
+				ABAEEB8AFB0177AD980B6565 /* [CP] Check Pods Manifest.lock */,
 				6BDA2EFD2567DE9D00843F45 /* Sources */,
 				6BDA2EFE2567DE9D00843F45 /* Frameworks */,
 				6BDA2EFF2567DE9D00843F45 /* Resources */,
+				73B8780C1EFF17F39629F164 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -155,6 +209,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6BDA2F2E2567DE9E00843F45 /* Build configuration list for PBXNativeTarget "FatSecretTests" */;
 			buildPhases = (
+				6B00E01615DADA6FE8FBA808 /* [CP] Check Pods Manifest.lock */,
 				6BDA2F132567DE9E00843F45 /* Sources */,
 				6BDA2F142567DE9E00843F45 /* Frameworks */,
 				6BDA2F152567DE9E00843F45 /* Resources */,
@@ -173,9 +228,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6BDA2F312567DE9E00843F45 /* Build configuration list for PBXNativeTarget "FatSecretUITests" */;
 			buildPhases = (
+				E5DAFD061A529C1DC1D7538B /* [CP] Check Pods Manifest.lock */,
 				6BDA2F1E2567DE9E00843F45 /* Sources */,
 				6BDA2F1F2567DE9E00843F45 /* Frameworks */,
 				6BDA2F202567DE9E00843F45 /* Resources */,
+				14F7A5BD37189E66A7FCED2D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -235,6 +292,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6BDA2F112567DE9E00843F45 /* LaunchScreen.storyboard in Resources */,
+				6BE6EE282569080100063377 /* GoogleService-Info.plist in Resources */,
 				6BDA2F0E2567DE9E00843F45 /* Assets.xcassets in Resources */,
 				6BDA2F0C2567DE9D00843F45 /* Main.storyboard in Resources */,
 			);
@@ -256,13 +314,119 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		14F7A5BD37189E66A7FCED2D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FatSecret-FatSecretUITests/Pods-FatSecret-FatSecretUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FatSecret-FatSecretUITests/Pods-FatSecret-FatSecretUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FatSecret-FatSecretUITests/Pods-FatSecret-FatSecretUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6B00E01615DADA6FE8FBA808 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FatSecretTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		73B8780C1EFF17F39629F164 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FatSecret/Pods-FatSecret-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FatSecret/Pods-FatSecret-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FatSecret/Pods-FatSecret-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ABAEEB8AFB0177AD980B6565 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FatSecret-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E5DAFD061A529C1DC1D7538B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FatSecret-FatSecretUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		6BDA2EFD2567DE9D00843F45 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6BE6EE6525690F7200063377 /* AuthViewModel.swift in Sources */,
 				6BE6EE232569028D00063377 /* AuthViewController.swift in Sources */,
 				6BDA2F092567DE9D00843F45 /* ViewController.swift in Sources */,
+				6BE6EE6A256917DF00063377 /* AuthRepository.swift in Sources */,
+				6BE6EE6F25691E8A00063377 /* Result.swift in Sources */,
 				6BDA2F052567DE9D00843F45 /* AppDelegate.swift in Sources */,
 				6BDA2F072567DE9D00843F45 /* SceneDelegate.swift in Sources */,
 			);
@@ -437,6 +601,7 @@
 		};
 		6BDA2F2C2567DE9E00843F45 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 12BEE7C51AC8BE6E6A3EDE95 /* Pods-FatSecret.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -455,6 +620,7 @@
 		};
 		6BDA2F2D2567DE9E00843F45 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1D5058EDD8D1D5C921BC1DC0 /* Pods-FatSecret.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -473,6 +639,7 @@
 		};
 		6BDA2F2F2567DE9E00843F45 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FDE50D84D18590106279F44A /* Pods-FatSecretTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -494,6 +661,7 @@
 		};
 		6BDA2F302567DE9E00843F45 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6564E759812B0E6889398910 /* Pods-FatSecretTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -515,6 +683,7 @@
 		};
 		6BDA2F322567DE9E00843F45 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 21F38E0569CB1E884510CE74 /* Pods-FatSecret-FatSecretUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -534,6 +703,7 @@
 		};
 		6BDA2F332567DE9E00843F45 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 617ED0251279E87349EB5D54 /* Pods-FatSecret-FatSecretUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

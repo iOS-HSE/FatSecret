@@ -1,29 +1,36 @@
-//
-//  AuthViewController.swift
-//  FatSecret
-//
-//  Created by user184905 on 11/21/20.
-//
-
 import UIKit
 
 class AuthViewController: UIViewController {
+    
+    private let viewModel: AuthViewModel
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    @IBOutlet weak var emailTextField: UITextField!
+    
+    @IBOutlet weak var passwordTextField: UITextField!
+    
+    @IBAction func logInBtnClicked(_ sender: Any) {
+        let email = emailTextField.text ?? ""
+        let password = passwordTextField.text ?? ""
+        viewModel.sendCommand(command: AuthCommand.EmailAuth(email: email, password: password))
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        viewModel.emailAuthResult.observe(action: emailAuthObserve)
     }
-    */
-
+    
+    private func emailAuthObserve(success: Bool) -> Unit {
+        if (success) {
+            presentAlert(message: "Email auth success")
+        } else {
+            presentAlert(message: "Email auth failed")
+        }
+    }
+    
+    private func presentAlert(message: String) {
+        let alert = UIAlertController(title: "Alert", message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "Ok", style: .default)
+        alert.addAction(okAction)
+        self.present(alert, animated: true)
+    }
 }

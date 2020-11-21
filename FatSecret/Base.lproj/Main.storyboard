@@ -107,20 +107,41 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="59"/>
                                 <state key="normal" title="Enter"/>
                                 <connections>
+                                    <action selector="logInBtnClicked:" destination="PFz-lr-6pI" eventType="touchUpInside" id="g8z-cy-foM"/>
                                     <segue destination="CWV-bs-pnO" kind="show" id="uhh-pX-emn"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oOa-n4-rUH">
+                                <rect key="frame" x="152" y="247" width="97" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pHu-eh-PcQ">
+                                <rect key="frame" x="152" y="341" width="97" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="g18-Gf-8kU"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="oOa-n4-rUH" firstAttribute="leading" secondItem="g18-Gf-8kU" secondAttribute="leading" constant="152" id="3Ud-xj-oDH"/>
+                            <constraint firstItem="pHu-eh-PcQ" firstAttribute="trailing" secondItem="oOa-n4-rUH" secondAttribute="trailing" id="7CC-gA-3JO"/>
+                            <constraint firstItem="g18-Gf-8kU" firstAttribute="trailing" secondItem="oOa-n4-rUH" secondAttribute="trailing" constant="165" id="ACf-cs-7Aw"/>
                             <constraint firstItem="6aP-aG-Y6D" firstAttribute="centerX" secondItem="QFX-6m-ZOF" secondAttribute="centerX" id="XYz-y1-ASC"/>
                             <constraint firstItem="6aP-aG-Y6D" firstAttribute="top" secondItem="g18-Gf-8kU" secondAttribute="top" constant="363" id="YXn-vr-LPf"/>
                             <constraint firstItem="6aP-aG-Y6D" firstAttribute="centerY" secondItem="QFX-6m-ZOF" secondAttribute="centerY" id="boj-gh-J0h"/>
+                            <constraint firstItem="pHu-eh-PcQ" firstAttribute="leading" secondItem="oOa-n4-rUH" secondAttribute="leading" id="cr0-aw-VCt"/>
+                            <constraint firstItem="6aP-aG-Y6D" firstAttribute="top" secondItem="pHu-eh-PcQ" secondAttribute="bottom" constant="32" id="ee8-Ed-1O2"/>
+                            <constraint firstItem="oOa-n4-rUH" firstAttribute="top" secondItem="g18-Gf-8kU" secondAttribute="top" constant="203" id="fHf-Dr-5TJ"/>
                             <constraint firstItem="6aP-aG-Y6D" firstAttribute="leading" secondItem="g18-Gf-8kU" secondAttribute="leading" constant="142" id="q77-Hx-P9i"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 1" id="QlX-gd-cXN"/>
+                    <connections>
+                        <outlet property="emailTextField" destination="oOa-n4-rUH" id="PuM-W2-qwn"/>
+                        <outlet property="passwordTextField" destination="pHu-eh-PcQ" id="Oex-Nn-Bgh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZVk-8i-bQ0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
