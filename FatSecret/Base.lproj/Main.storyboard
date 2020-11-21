@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="CWV-bs-pnO">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PFz-lr-6pI">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
@@ -13,7 +13,7 @@
             <objects>
                 <viewController id="vJ1-3G-oKo" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Mrq-Il-wFg">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="9tq-MN-cCk"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -29,7 +29,7 @@
             <objects>
                 <viewController title="Item3" id="eHM-w7-wid" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Kgb-EE-el7">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="e1L-xV-eU3"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -67,7 +67,7 @@
             <objects>
                 <viewController title="Item 4" id="Jjc-xx-EEU" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lJR-AY-3xR">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="fca-cz-ito"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -83,7 +83,7 @@
             <objects>
                 <viewController title="Item 5" id="37w-nT-4lC" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="afv-HN-a62">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="DaF-ie-5wk"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -97,33 +97,32 @@
         <!--authentication-->
         <scene sceneID="dNZ-Da-BZj">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ZVk-8i-bQ0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <viewController title="authentication" id="PFz-lr-6pI" sceneMemberID="viewController">
+                <viewController title="authentication" id="PFz-lr-6pI" customClass="AuthViewController" customModule="FatSecret" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QFX-6m-ZOF">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6aP-aG-Y6D">
                                 <rect key="frame" x="142" y="407" width="130" height="82"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="82" id="0AT-KO-8QK"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="130" id="iWk-jI-O7y"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="59"/>
                                 <state key="normal" title="Enter"/>
+                                <connections>
+                                    <segue destination="CWV-bs-pnO" kind="show" id="uhh-pX-emn"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="g18-Gf-8kU"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="6aP-aG-Y6D" firstAttribute="centerX" secondItem="QFX-6m-ZOF" secondAttribute="centerX" id="IdL-XC-MV8"/>
-                            <constraint firstItem="6aP-aG-Y6D" firstAttribute="top" secondItem="g18-Gf-8kU" secondAttribute="top" constant="363" id="TUU-zG-cY3"/>
-                            <constraint firstItem="6aP-aG-Y6D" firstAttribute="leading" secondItem="g18-Gf-8kU" secondAttribute="leading" constant="142" id="eOJ-9w-Wxv"/>
-                            <constraint firstItem="6aP-aG-Y6D" firstAttribute="centerY" secondItem="QFX-6m-ZOF" secondAttribute="centerY" id="y3V-sZ-hUZ"/>
+                            <constraint firstItem="6aP-aG-Y6D" firstAttribute="centerX" secondItem="QFX-6m-ZOF" secondAttribute="centerX" id="XYz-y1-ASC"/>
+                            <constraint firstItem="6aP-aG-Y6D" firstAttribute="top" secondItem="g18-Gf-8kU" secondAttribute="top" constant="363" id="YXn-vr-LPf"/>
+                            <constraint firstItem="6aP-aG-Y6D" firstAttribute="centerY" secondItem="QFX-6m-ZOF" secondAttribute="centerY" id="boj-gh-J0h"/>
+                            <constraint firstItem="6aP-aG-Y6D" firstAttribute="leading" secondItem="g18-Gf-8kU" secondAttribute="leading" constant="142" id="q77-Hx-P9i"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 1" id="QlX-gd-cXN"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZVk-8i-bQ0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2501" y="388"/>
         </scene>

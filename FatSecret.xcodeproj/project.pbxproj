@@ -15,6 +15,7 @@
 		6BDA2F112567DE9E00843F45 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BDA2F0F2567DE9E00843F45 /* LaunchScreen.storyboard */; };
 		6BDA2F1C2567DE9E00843F45 /* FatSecretTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BDA2F1B2567DE9E00843F45 /* FatSecretTests.swift */; };
 		6BDA2F272567DE9E00843F45 /* FatSecretUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BDA2F262567DE9E00843F45 /* FatSecretUITests.swift */; };
+		6BE6EE232569028D00063377 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE6EE222569028D00063377 /* AuthViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		6BDA2F222567DE9E00843F45 /* FatSecretUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FatSecretUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BDA2F262567DE9E00843F45 /* FatSecretUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FatSecretUITests.swift; sourceTree = "<group>"; };
 		6BDA2F282567DE9E00843F45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6BE6EE222569028D00063377 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				6BDA2F0D2567DE9E00843F45 /* Assets.xcassets */,
 				6BDA2F0F2567DE9E00843F45 /* LaunchScreen.storyboard */,
 				6BDA2F122567DE9E00843F45 /* Info.plist */,
+				6BE6EE222569028D00063377 /* AuthViewController.swift */,
 			);
 			path = FatSecret;
 			sourceTree = "<group>";
@@ -258,6 +261,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6BE6EE232569028D00063377 /* AuthViewController.swift in Sources */,
 				6BDA2F092567DE9D00843F45 /* ViewController.swift in Sources */,
 				6BDA2F052567DE9D00843F45 /* AppDelegate.swift in Sources */,
 				6BDA2F072567DE9D00843F45 /* SceneDelegate.swift in Sources */,
