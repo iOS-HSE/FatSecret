@@ -1,34 +1,38 @@
-//
-//  SignInViewController.swift
-//  FatSecret
-//
-//  Created by user184905 on 12/2/20.
-//
-
 import UIKit
+import Firebase
 
 class SignInViewController: UIViewController {
+        
+//    private let MAIN_SCREEN_IDENTIFIER: String = "MainScreen"
 
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var loginField: UITextField!
+
+    @IBAction func clickToEnter(_ sender: Any) {
+        guard let login = loginField.text else { return }
+        guard let password = passwordField.text else { return }
+        Auth.auth().signIn(withEmail: login, password: password, completion: authOnCompletion)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
-    
-
-    @IBAction func clickToEnter(_ sender: Any) {
-    }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+//
+//    private func badAuthAlert(_ error: Error) {
+//        let alert = UIAlertController(title: "Authorization error", message: error.localizedDescription, preferredStyle: .alert)
+//
+//        alert.addAction(UIAlertAction(title: "OK", style: .default))
+//
+//        self.present(alert, animated: true, completion: nil)
+//    }
+//
+//    private func signUp(result: AuthDataResult?, error: Error?) {
+//        if (error != nil) {
+//            badAuthAlert(error!)
+//            return
+//        }
+//        let newViewController = storyboard?.instantiateViewController(withIdentifier: MAIN_SCREEN_IDENTIFIER ) as! MainViewController
+//        self.present(newViewController, animated: true, completion: nil)
+//    }
 
 }
