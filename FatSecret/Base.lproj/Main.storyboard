@@ -89,7 +89,8 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <tabBarItem key="tabBarItem" id="Vdq-Ee-OiQ">
-                        <string key="title">Profile Icon</string>
+                        <string key="title">Profile Icon
+</string>
                     </tabBarItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NaV-dK-iaD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -128,16 +129,18 @@
                                     <action selector="clickToEnter:" destination="PFz-lr-6pI" eventType="touchUpInside" id="cWg-yh-vP3"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Login" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DkO-V8-Eec">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Login" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DkO-V8-Eec">
                                 <rect key="frame" x="142" y="92" width="141" height="50"/>
+                                <accessibility key="accessibilityConfiguration" hint="Login"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="9Qn-4u-z1s"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Password" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Tyy-kM-ygV">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Tyy-kM-ygV">
                                 <rect key="frame" x="142" y="195" width="141" height="50"/>
+                                <accessibility key="accessibilityConfiguration" hint="Password"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="GQk-N9-SIS"/>
                                 </constraints>
@@ -216,7 +219,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Login" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UPE-tK-Zyg">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Login" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UPE-tK-Zyg">
                                 <rect key="frame" x="103" y="140" width="199" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="hlT-Kg-eWj"/>
@@ -224,7 +227,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Password" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ATu-ME-7jQ">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ATu-ME-7jQ">
                                 <rect key="frame" x="103" y="239" width="199" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="ohR-6P-TBb"/>

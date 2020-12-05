@@ -2,6 +2,8 @@ import UIKit
 import FirebaseAuth
 
 class SignUpViewController: UIViewController {
+    
+    private let SIGN_IN_SCREEN_INDETIFIER = "SignIn"
 
     @IBOutlet weak var loginField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
@@ -9,28 +11,20 @@ class SignUpViewController: UIViewController {
     @IBAction func handleSignUpClick(_ sender: Any) {
         guard let login = loginField.text else { return }
         guard let password = passwordField.text else { return }
-        Auth.auth().createUser(withEmail: login, password: password, completion: authOnCompletion)
+        Auth.auth().createUser(withEmail: login, password: password, completion: goToSignInScreen)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
-//    private func badAuthAlert(_ error: Error) {
-//        let alert = UIAlertController(title: "Bad Auth", message: error.localizedDescription, preferredStyle: .alert)
-//
-//        alert.addAction(UIAlertAction(title: "OK", style: .default))
-//
-//        self.present(alert, animated: true, completion: nil)
-//    }
-//
-//    private func signIn(result: AuthDataResult?, error: Error?) {
-//        if (error != nil) {
-//            badAuthAlert(error!)
-//            return
-//        }
-//        let newViewController = storyboard?.instantiateViewController(withIdentifier: "SignIn") as! SignInViewController
-//        self.present(newViewController, animated: true, completion: nil)
-//    }
+    private func goToSignInScreen(result: AuthDataResult?, error: Error?) {
+        if (error != nil) {
+            authErrorAlert(error!)
+            return
+        }
+        let newViewController = storyboard?.instantiateViewController(withIdentifier: SIGN_IN_SCREEN_INDETIFIER) as! SignInViewController
+        self.present(newViewController, animated: true, completion: nil)
+    }
 
 }
