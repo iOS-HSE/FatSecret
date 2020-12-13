@@ -1,5 +1,6 @@
 import UIKit
 import Firebase
+import FatSecretSwift
 
 class SignInViewController: UIViewController {
         
