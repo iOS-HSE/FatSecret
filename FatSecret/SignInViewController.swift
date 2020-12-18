@@ -24,7 +24,9 @@ class SignInViewController: UIViewController {
             authErrorAlert(error!)
             return
         }
-        let newViewController = storyboard?.instantiateViewController(withIdentifier: MAIN_SCREEN_IDENTIFIER ) as! MainViewController
+        Storage.userID = result?.user.uid
+        Storage.updateDataFromFirestore()
+        let newViewController = (storyboard?.instantiateViewController(withIdentifier: MAIN_SCREEN_IDENTIFIER ))!
         self.present(newViewController, animated: true, completion: nil)
     }
 

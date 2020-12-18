@@ -10,19 +10,23 @@ import FatSecretSwift
 
 class ProductViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
 
-    var product: SearchedFood!
+    var product_id: String = ""
     var data: [String] = []
+    var onDisapper : (() -> Void)! = nil
+    var isFavorite = false
     
     @IBOutlet weak var nameText: UILabel!
     @IBOutlet weak var tableView: UITableView!
-    private let fatSecretClient = FatSecretClient()
+    @IBOutlet weak var favoriteButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-        nameText.text = product.name
-        fatSecretClient.getFood(id: product.id) { food in
+        updateButtonImage()
+        
+        Storage.fatSecretClient.getFood(id: product_id) { food in
+            self.nameText.text = food.name
             let serving : Serving? = food.servings?[0]
             
             if let calories: String = serving?.calories {
@@ -62,6 +66,10 @@ class ProductViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        onDisapper()
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return data.count
     }
@@ -72,4 +80,25 @@ class ProductViewController: UIViewController, UITableViewDelegate, UITableViewD
         return cell
     }
     
+    func updateButtonImage(){
+        if isFavorite{
+            favoriteButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
+        }
+        else {
+            favoriteButton.setImage(UIImage(systemName: "star"), for: .normal)
+        }
+    }
+    
+    @IBAction func clickToFavorite(_ sender: Any) {
+        isFavorite = !isFavorite
+        Storage.changeFavorites(id: product_id)
+        updateButtonImage()
+    }
+    
+    @IBAction func clcikToEat(_ sender: Any) {
+        Storage.eatFood(id: product_id)
+        let alert = UIAlertController(title: "Success", message: "Food add to eaten", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(alert, animated: true)
+    }
 }

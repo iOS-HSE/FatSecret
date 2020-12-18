@@ -15,15 +15,32 @@ class TableViewCell: UITableViewCell {
     @IBOutlet weak var fatText: UILabel!
     @IBOutlet weak var carbsText: UILabel!
     @IBOutlet weak var proteinText: UILabel!
+    @IBOutlet weak var favoriteButton: UIButton!
+    var isFavorite = false {
+        didSet { updateButtonImage() }
+    }
+    var id : String!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        // Configure the view for the selected state
     }
-
+    
+    func updateButtonImage(){
+        if isFavorite{
+            favoriteButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
+        }
+        else {
+            favoriteButton.setImage(UIImage(systemName: "star"), for: .normal)
+        }
+    }
+    
+    @IBAction func clickToFavorite(_ sender: Any) {
+        isFavorite = !isFavorite
+        Storage.changeFavorites(id: id)
+    }
 }
