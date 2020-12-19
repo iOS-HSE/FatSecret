@@ -15,6 +15,14 @@ class UserViewController: UIViewController, UITableViewDataSource, UITableViewDe
     @IBAction func addGoal(_ sender: Any) {
         showAddDialog()
     }
+    @IBAction func clickEdit(_ sender: Any) {
+        handleEdit()
+    }
+    @IBAction func clickSave(_ sender: Any) {
+        handleSave()
+    }
+    @IBOutlet weak var editButton: UIButton!
+    @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var surnameField: UITextField!
     @IBOutlet weak var ageField: UITextField!
@@ -34,6 +42,39 @@ class UserViewController: UIViewController, UITableViewDataSource, UITableViewDe
         addressField.delegate = self
         mailField.delegate = self
         updateData()
+        changeTextFields(isEditingEnabled: false)
+    }
+    
+    private func handleEdit() {
+        changeTextFields(isEditingEnabled: true)
+    }
+    
+    private func handleSave() {
+        changeTextFields(isEditingEnabled: false)
+        Storage.updateUserInfo(
+            name: nameField.text ?? "",
+            surname: surnameField.text ?? "",
+            age: calculateAge(ageField.text ?? ""),
+            address: addressField.text ?? "",
+            mail: mailField.text ?? ""
+        )
+    }
+    
+    private func calculateAge(_ ageText: String) -> Int {
+        if ageText == "" {
+            return 0
+        }
+        return Int(ageText) ?? 0
+    }
+    
+    private func changeTextFields(isEditingEnabled: Bool) {
+        nameField.isUserInteractionEnabled = isEditingEnabled
+        surnameField.isUserInteractionEnabled = isEditingEnabled
+        ageField.isUserInteractionEnabled = isEditingEnabled
+        addressField.isUserInteractionEnabled = isEditingEnabled
+        mailField.isUserInteractionEnabled = isEditingEnabled
+        editButton.isEnabled = !isEditingEnabled
+        saveButton.isEnabled = isEditingEnabled
     }
     
     private func showAddDialog() {
@@ -47,7 +88,7 @@ class UserViewController: UIViewController, UITableViewDataSource, UITableViewDe
             if goal == "" {
                 return
             }
-            Storage.goals.append(goal)
+            Storage.addGoal(goal)
             self.tableView.reloadData()
         }))
         
@@ -59,7 +100,7 @@ class UserViewController: UIViewController, UITableViewDataSource, UITableViewDe
     func updateData(){
         nameField.text = Storage.name
         surnameField.text = Storage.surname
-        ageField.text = String(Storage.age) + " years"
+        ageField.text = String(Storage.age)
         addressField.text = Storage.address
         mailField.text = Storage.mail
         

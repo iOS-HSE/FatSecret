@@ -54,6 +54,19 @@ class Storage {
         updateEatenInFirestore()
     }
     
+    public static func addGoal(_ goal: String) {
+        Storage.goals.append(goal)
+        firestore.collection("users").document(userFirestoreDocumentID).updateData(["goals": goals])
+    }
+    
+    public static func updateUserInfo(name: String, surname: String, age: Int, address: String, mail: String) {
+        firestore.collection("users").document(userFirestoreDocumentID).updateData(["name": name])
+        firestore.collection("users").document(userFirestoreDocumentID).updateData(["surname": surname])
+        firestore.collection("users").document(userFirestoreDocumentID).updateData(["age": age])
+        firestore.collection("users").document(userFirestoreDocumentID).updateData(["address": address])
+        firestore.collection("users").document(userFirestoreDocumentID).updateData(["mail": mail])
+    }
+    
     public static func foodIsEatenToday(id: String) -> Bool{
         let date = dateFormatter.string(from: Date())
         for food in eatenFood{

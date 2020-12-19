@@ -1,10 +1,3 @@
-//
-//  ProfileViewController.swift
-//  FatSecret
-//
-//  Created by user184905 on 12/19/20.
-//
-
 import UIKit
 import FatSecretSwift
 import Charts
@@ -61,16 +54,21 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
         let protein = getTodayProtein()
         let carbo = getTodayCarbohydrates()
         let fat = getTodayFat()
-        dataEntries.append(PieChartDataEntry(value: protein, label: "protein"))
-        dataEntries.append(PieChartDataEntry(value: carbo, label: "carbohydrates"))
-        dataEntries.append(PieChartDataEntry(value: fat, label: "fat"))
+        if protein == 0 && carbo == 0 && fat == 0 {
+            dataEntries.append(PieChartDataEntry(value: 1, label: "You don't eat today"))
+        } else {
+            dataEntries.append(PieChartDataEntry(value: protein, label: "protein"))
+            dataEntries.append(PieChartDataEntry(value: carbo, label: "carbohydrates"))
+            dataEntries.append(PieChartDataEntry(value: fat, label: "fat"))
+        }
         let pieChartDataSet = PieChartDataSet(entries: dataEntries, label: nil)
         pieChartDataSet.colors = [.systemPink, .systemBlue , .systemPurple]
         let pieChartData = PieChartData(dataSet: pieChartDataSet)
         pieChart.data = pieChartData
         pieChart.legend.enabled = false
         
-        caloriesLabel.text = String(Int(getTodayCalories())) + " / 2700 kilocalories"
+        let calories = Int(getTodayCalories())
+        caloriesLabel.text = String(calories) + " / 2700 kilocalories"
         tableView.reloadData()
     }
     
@@ -166,4 +164,3 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
 }
-
