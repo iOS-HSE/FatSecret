@@ -1,10 +1,3 @@
-//
-//  TableViewController.swift
-//  FatSecret
-//
-//  Created by user184905 on 12/12/20.
-//
-
 import UIKit
 import FatSecretSwift
 
@@ -59,10 +52,10 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     func searchAction(){
         guard let text = searchField.text else { return }
-        if text == ""{
+        if text == "" {
             return
         }
-        do{
+        do {
             Storage.fatSecretClient.searchFood(name: text) { search in
                 self.data = search.foods
 
@@ -71,7 +64,7 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
                 }
             }
         }
-        catch{
+        catch {
             return
         }
         

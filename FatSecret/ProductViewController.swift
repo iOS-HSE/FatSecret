@@ -18,15 +18,16 @@ class ProductViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet weak var nameText: UILabel!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var favoriteButton: UIButton!
+    @IBOutlet weak var deleteButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
         updateButtonImage()
+        updateDeleteButtonState()
         
         Storage.fatSecretClient.getFood(id: product_id) { food in
-            self.nameText.text = food.name
             let serving : Serving? = food.servings?[0]
             
             if let calories: String = serving?.calories {
@@ -61,6 +62,7 @@ class ProductViewController: UIViewController, UITableViewDelegate, UITableViewD
             }
 
             DispatchQueue.main.async {
+                self.nameText.text = food.name
                 self.tableView.reloadData()
             }
         }
@@ -89,6 +91,10 @@ class ProductViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
     }
     
+    func updateDeleteButtonState(){
+        deleteButton.isHidden = !Storage.foodIsEatenToday(id: product_id)
+    }
+    
     @IBAction func clickToFavorite(_ sender: Any) {
         isFavorite = !isFavorite
         Storage.changeFavorites(id: product_id)
@@ -100,5 +106,15 @@ class ProductViewController: UIViewController, UITableViewDelegate, UITableViewD
         let alert = UIAlertController(title: "Success", message: "Food add to eaten", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         self.present(alert, animated: true)
+        updateDeleteButtonState()
+    }
+    
+    @IBAction func clickToDelete(_ sender: Any) {
+        Storage.deleteFood(id: product_id)
+        let alert = UIAlertController(title: "Success", message: "Food delete from eaten", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {_ in self.dismiss(animated: true, completion: nil)}))
+        self.present(alert, animated: true)
+//        self.dismiss(animated: true, completion: nil)
+        updateDeleteButtonState()
     }
 }

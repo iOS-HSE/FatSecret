@@ -9,14 +9,46 @@ import UIKit
 import FatSecretSwift
 import Charts
 
-class ProfileViewController: UIViewController {
+class ProfileViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    private let PRODUCT_SCREEN_IDENTIFIER: String = "ProductScreen"
     @IBOutlet weak var pieChart: PieChartView!
     @IBOutlet weak var caloriesLabel: UILabel!
+    @IBOutlet weak var tableView: UITableView!
     var eatenFood : [Food] = []
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        getTodayEatenFood().count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! TableViewCell
+        let food = getTodayEatenFood()[indexPath.row]
+        cell.nameText.text = food.name
+        cell.id = food.id
+        cell.isFavorite = Storage.favoritesFood.contains(food.id)
+        let serving = food.servings?[0]
+        cell.doseText.text = ""
+        cell.caloriesText.text = "Calories: " + (serving?.calories)!
+        cell.fatText.text = "Fat: " + (serving?.fat)!
+        cell.carbsText.text = "Carbs: " + (serving?.carbohydrate)!
+        cell.proteinText.text = "Protein: " + (serving?.protein)!
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let newViewController = storyboard?.instantiateViewController(withIdentifier: PRODUCT_SCREEN_IDENTIFIER ) as! ProductViewController
+        let product = getTodayEatenFood()[indexPath.row]
+        newViewController.product_id = product.id
+        newViewController.isFavorite = Storage.favoritesFood.contains(product.id)
+        newViewController.onDisapper = self.tableView.reloadData
+        self.present(newViewController, animated: true, completion: nil)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.delegate = self
+        tableView.dataSource = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -25,7 +57,6 @@ class ProfileViewController: UIViewController {
     }
     
     func updatePage(){
-//        pieChart.setValue(getTodayCalories(), forKey: "calories")
         var dataEntries : [ChartDataEntry] = []
         let protein = getTodayProtein()
         let carbo = getTodayCarbohydrates()
@@ -40,6 +71,7 @@ class ProfileViewController: UIViewController {
         pieChart.legend.enabled = false
         
         caloriesLabel.text = String(Int(getTodayCalories())) + " / 2700 kilocalories"
+        tableView.reloadData()
     }
     
     func updateEatenFood(){
@@ -52,9 +84,9 @@ class ProfileViewController: UIViewController {
             return false
         }
     
-        for id in Storage.favoritesFood {
-            if !isIdInEatenFood(id){
-                Storage.fatSecretClient.getFood(id: id) { food in
+        for food in Storage.eatenFood {
+            if !isIdInEatenFood(food["id"]!){
+                Storage.fatSecretClient.getFood(id: food["id"]!) { food in
                     self.eatenFood.append(food)
                     DispatchQueue.main.async {
                         self.updatePage()
