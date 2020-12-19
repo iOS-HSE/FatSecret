@@ -331,6 +331,7 @@ PODS:
     - nanopb/encode (= 1.30906.0)
   - nanopb/decode (1.30906.0)
   - nanopb/encode (1.30906.0)
+  - paper-onboarding (6.1.5)
   - PromisesObjC (1.2.11)
 
 DEPENDENCIES:
@@ -339,6 +340,7 @@ DEPENDENCIES:
   - Firebase/Firestore
   - FirebaseAuth
   - FirebaseFirestoreSwift
+  - paper-onboarding
 
 SPEC REPOS:
   trunk:
@@ -361,6 +363,7 @@ SPEC REPOS:
     - GTMSessionFetcher
     - leveldb-library
     - nanopb
+    - paper-onboarding
     - PromisesObjC
 
 SPEC CHECKSUMS:
@@ -383,8 +386,9 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: b3503b20a988c4e20cc189aa798fd18220133f52
   leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
   nanopb: 59317e09cf1f1a0af72f12af412d54edf52603fc
+  paper-onboarding: fede1799b1da6988f3788e3b71654583c6f3bce1
   PromisesObjC: 8c196f5a328c2cba3e74624585467a557dcb482f
 
-PODFILE CHECKSUM: 2752aba9b10cee3776d090f837b87160b0bd9515
+PODFILE CHECKSUM: f8e8131fe86a741e5df601afdd4bbdd7a8a4bab1
 
 COCOAPODS: 1.10.0

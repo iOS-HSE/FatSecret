@@ -313,6 +313,21 @@
             </objects>
             <point key="canvasLocation" x="-3982.6086956521744" y="42.857142857142854"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="Qhm-wF-hu1">
+            <objects>
+                <viewController restorationIdentifier="OnboardingScreen" storyboardIdentifier="OnboardingScreen" id="eFY-eW-Pht" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xVQ-Pj-GEW" customClass="OnboardingContentView" customModule="paper_onboarding">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="PxB-yi-lt6"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="00E-jx-FoI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-4104" y="709"/>
+        </scene>
         <!--sign up-->
         <scene sceneID="EG7-PC-Ank">
             <objects>
