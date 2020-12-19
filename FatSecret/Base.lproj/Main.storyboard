@@ -5,6 +5,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -215,8 +216,11 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6aP-aG-Y6D">
                                 <rect key="frame" x="20" y="423" width="374" height="76"/>
+                                <color key="backgroundColor" name="AccentColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="59"/>
-                                <state key="normal" title="Sign in"/>
+                                <state key="normal" title="Sign in">
+                                    <color key="titleColor" systemColor="secondarySystemBackgroundColor"/>
+                                </state>
                                 <connections>
                                     <action selector="clickToEnter:" destination="PFz-lr-6pI" eventType="touchUpInside" id="cWg-yh-vP3"/>
                                 </connections>
@@ -259,25 +263,33 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Umv-eQ-rDj">
-                                <rect key="frame" x="0.0" y="296" width="414" height="69"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Umv-eQ-rDj">
+                                <rect key="frame" x="85" y="296" width="252" height="52"/>
+                                <color key="backgroundColor" name="AccentColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="xv0-aH-yMG"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
-                                <state key="normal" title="Sign In"/>
+                                <state key="normal" title="Sign In">
+                                    <color key="titleColor" systemColor="secondarySystemGroupedBackgroundColor"/>
+                                </state>
                                 <connections>
                                     <segue destination="PFz-lr-6pI" kind="show" id="mad-1U-fp5"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LtQ-q1-5vJ">
-                                <rect key="frame" x="0.0" y="471" width="414" height="51"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LtQ-q1-5vJ">
+                                <rect key="frame" x="85" y="471" width="252" height="51"/>
+                                <color key="backgroundColor" name="AccentColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
-                                <state key="normal" title="Sign Up"/>
+                                <state key="normal" title="Sign Up">
+                                    <color key="titleColor" systemColor="secondarySystemGroupedBackgroundColor"/>
+                                </state>
                                 <connections>
                                     <segue destination="DkK-Hi-rvf" kind="show" id="DVE-Ve-mzk"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Fat Secret" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gfi-IS-0Ca">
-                                <rect key="frame" x="0.0" y="147" width="414" height="53"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fat Secret" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gfi-IS-0Ca">
+                                <rect key="frame" x="0.0" y="131.5" width="414" height="68.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="57"/>
                                 <color key="highlightedColor" systemColor="linkColor"/>
                             </label>
@@ -285,10 +297,15 @@
                         <viewLayoutGuide key="safeArea" id="r5X-41-DPS"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="r5X-41-DPS" firstAttribute="bottom" secondItem="LtQ-q1-5vJ" secondAttribute="bottom" constant="330" id="OuH-i8-ECP"/>
-                            <constraint firstItem="Umv-eQ-rDj" firstAttribute="leading" secondItem="r5X-41-DPS" secondAttribute="leading" constant="194" id="coK-fH-mIM"/>
-                            <constraint firstItem="Umv-eQ-rDj" firstAttribute="top" secondItem="r5X-41-DPS" secondAttribute="top" constant="258" id="eVC-4h-Vel"/>
-                            <constraint firstItem="LtQ-q1-5vJ" firstAttribute="centerX" secondItem="Umv-eQ-rDj" secondAttribute="centerX" id="yV7-2O-wYE"/>
+                            <constraint firstItem="Umv-eQ-rDj" firstAttribute="leading" secondItem="gfi-IS-0Ca" secondAttribute="leading" constant="85" id="8Fb-qy-xMm"/>
+                            <constraint firstItem="r5X-41-DPS" firstAttribute="bottom" secondItem="LtQ-q1-5vJ" secondAttribute="bottom" constant="340" id="9C3-4U-Sbh"/>
+                            <constraint firstItem="LtQ-q1-5vJ" firstAttribute="leading" secondItem="gfi-IS-0Ca" secondAttribute="leading" constant="85" id="Dnn-vv-XPX"/>
+                            <constraint firstItem="Umv-eQ-rDj" firstAttribute="leading" secondItem="r5X-41-DPS" secondAttribute="leading" constant="85" id="ERt-yv-TAr"/>
+                            <constraint firstItem="LtQ-q1-5vJ" firstAttribute="trailing" secondItem="gfi-IS-0Ca" secondAttribute="trailing" constant="-77" id="O9j-DG-fnS"/>
+                            <constraint firstItem="Umv-eQ-rDj" firstAttribute="top" secondItem="ikr-On-b03" secondAttribute="top" constant="296" id="RTz-Ma-hku"/>
+                            <constraint firstItem="LtQ-q1-5vJ" firstAttribute="centerX" secondItem="ikr-On-b03" secondAttribute="centerX" constant="4" id="Rkd-Cq-kdT"/>
+                            <constraint firstItem="Umv-eQ-rDj" firstAttribute="trailing" secondItem="gfi-IS-0Ca" secondAttribute="trailing" constant="-77" id="fYY-OF-N5H"/>
+                            <constraint firstItem="Umv-eQ-rDj" firstAttribute="top" secondItem="gfi-IS-0Ca" secondAttribute="bottom" constant="96" id="mC7-Qp-Zcg"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -313,9 +330,12 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="abJ-aa-nXB">
-                                <rect key="frame" x="15" y="403" width="374" height="122"/>
+                                <rect key="frame" x="15" y="403" width="374" height="72"/>
+                                <color key="backgroundColor" name="AccentColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                <state key="normal" title="Sign up"/>
+                                <state key="normal" title="Sign up">
+                                    <color key="titleColor" systemColor="systemBackgroundColor"/>
+                                </state>
                                 <connections>
                                     <action selector="handleSignUpClick:" destination="DkK-Hi-rvf" eventType="touchUpInside" id="6v1-25-v5C"/>
                                 </connections>
@@ -846,8 +866,17 @@
         <image name="person" catalog="system" width="128" height="117"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <image name="star.fill" catalog="system" width="128" height="116"/>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="linkColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="secondarySystemBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="secondarySystemGroupedBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

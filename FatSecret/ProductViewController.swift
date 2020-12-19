@@ -69,6 +69,7 @@ class ProductViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
         onDisapper()
     }
     
@@ -104,7 +105,7 @@ class ProductViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBAction func clcikToEat(_ sender: Any) {
         Storage.eatFood(id: product_id)
         let alert = UIAlertController(title: "Success", message: "Food add to eaten", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {_ in self.dismiss(animated: true, completion: nil)}))
         self.present(alert, animated: true)
         updateDeleteButtonState()
     }
@@ -114,7 +115,6 @@ class ProductViewController: UIViewController, UITableViewDelegate, UITableViewD
         let alert = UIAlertController(title: "Success", message: "Food delete from eaten", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {_ in self.dismiss(animated: true, completion: nil)}))
         self.present(alert, animated: true)
-//        self.dismiss(animated: true, completion: nil)
         updateDeleteButtonState()
     }
 }
