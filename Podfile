@@ -11,6 +11,7 @@ target 'FatSecret' do
     pod 'FirebaseAuth'
     pod 'Firebase/Firestore'
     pod 'FirebaseFirestoreSwift'
+    pod 'Charts'
     
     target 'FatSecretTests' do
     inherit! :search_paths

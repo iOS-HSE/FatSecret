@@ -68,7 +68,6 @@ class FavoriteProductsTableViewController: UIViewController, UITableViewDataSour
             if !isIdInData(id){
                 Storage.fatSecretClient.getFood(id: id) { food in
                     self.data.append(food)
-                    print(food)
                     DispatchQueue.main.async {
                         self.tableView.reloadData()
                     }

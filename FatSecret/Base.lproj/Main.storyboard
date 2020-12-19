@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fSt-Rz-y2a">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fSt-Rz-y2a">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -409,21 +409,50 @@
             </objects>
             <point key="canvasLocation" x="-459" y="840"/>
         </scene>
-        <!--Profile-->
+        <!--Main-->
         <scene sceneID="KHY-x8-hrw">
             <objects>
-                <viewController id="V2E-qc-OLl" sceneMemberID="viewController">
+                <viewController id="V2E-qc-OLl" customClass="ProfileViewController" customModule="FatSecret" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5mu-EH-7CN">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zzs-bq-zOc" customClass="PieChartView" customModule="Charts">
+                                <rect key="frame" x="0.0" y="52" width="414" height="395"/>
+                                <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Pi-R5-6Pm">
+                                <rect key="frame" x="0.0" y="472" width="414" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="l2t-6m-Thz">
+                                <rect key="frame" x="0.0" y="52" width="414" height="761"/>
+                                <viewLayoutGuide key="contentLayoutGuide" id="QqF-on-NBL"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="nfe-yb-mVC"/>
+                            </scrollView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="Caf-LI-JYa"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Caf-LI-JYa" firstAttribute="bottom" secondItem="Zzs-bq-zOc" secondAttribute="bottom" constant="366" id="8PL-Hj-jof"/>
+                            <constraint firstItem="Zzs-bq-zOc" firstAttribute="centerX" secondItem="5mu-EH-7CN" secondAttribute="centerX" id="eYC-KF-Slm"/>
+                            <constraint firstItem="Zzs-bq-zOc" firstAttribute="centerY" secondItem="5mu-EH-7CN" secondAttribute="centerY" constant="-198.5" id="h19-2B-YSk"/>
+                            <constraint firstItem="Zzs-bq-zOc" firstAttribute="top" secondItem="l2t-6m-Thz" secondAttribute="top" id="oEp-il-7Ia"/>
+                            <constraint firstItem="Zzs-bq-zOc" firstAttribute="leading" secondItem="Caf-LI-JYa" secondAttribute="leading" id="oxZ-WH-VM3"/>
+                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Profile" id="lKe-ch-I6x"/>
+                    <tabBarItem key="tabBarItem" title="Main" id="lKe-ch-I6x"/>
+                    <connections>
+                        <outlet property="caloriesLabel" destination="3Pi-R5-6Pm" id="kyC-wu-HvD"/>
+                        <outlet property="pieChart" destination="Zzs-bq-zOc" id="hCd-fL-bxS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u6Q-ba-u9b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1413" y="-757"/>
+            <point key="canvasLocation" x="-1413.0434782608697" y="-757.36607142857144"/>
         </scene>
         <!--Food-->
         <scene sceneID="zD3-KO-uat">
@@ -567,6 +596,9 @@
         <image name="star.fill" catalog="system" width="128" height="116"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

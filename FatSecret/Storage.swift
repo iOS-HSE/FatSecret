@@ -10,9 +10,9 @@ import FatSecretSwift
 import FirebaseFirestore
 
 class Storage {
-    public static var userID : String! = nil
+    public static var userID : String! = nil // Move to UserDefaults
     private static var userFirestoreDocumentID : String! = nil
-    private static let dateFormatter = { () -> DateFormatter in
+    public static let dateFormatter = { () -> DateFormatter in
         let formatter = DateFormatter()
         formatter.dateFormat = "dd.MM.yyyy"
         return formatter
