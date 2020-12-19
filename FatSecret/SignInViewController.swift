@@ -5,6 +5,9 @@ import FatSecretSwift
 class SignInViewController: UIViewController {
         
     private let MAIN_SCREEN_IDENTIFIER: String = "MainScreen"
+    
+    var login = ""
+    var password = ""
 
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var loginField: UITextField!
@@ -17,6 +20,8 @@ class SignInViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        loginField.text = login
+        passwordField.text = password
     }
     
     private func goToMainScreen(result: AuthDataResult?, error: Error?) {

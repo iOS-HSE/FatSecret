@@ -1,10 +1,3 @@
-//
-//  ProductViewController.swift
-//  FatSecret
-//
-//  Created by user184905 on 12/13/20.
-//
-
 import UIKit
 import FatSecretSwift
 

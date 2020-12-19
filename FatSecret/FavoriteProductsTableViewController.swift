@@ -1,10 +1,3 @@
-//
-//  FavoriteProductsTableViewController.swift
-//  FatSecret
-//
-//  Created by user184905 on 12/17/20.
-//
-
 import UIKit
 import FatSecretSwift
 

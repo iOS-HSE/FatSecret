@@ -12,6 +12,9 @@ class UserViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     
+    @IBAction func addGoal(_ sender: Any) {
+        showAddDialog()
+    }
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var surnameField: UITextField!
     @IBOutlet weak var ageField: UITextField!
@@ -31,6 +34,26 @@ class UserViewController: UIViewController, UITableViewDataSource, UITableViewDe
         addressField.delegate = self
         mailField.delegate = self
         updateData()
+    }
+    
+    private func showAddDialog() {
+        let alert = UIAlertController(title: "New goal", message: "Enter a goal", preferredStyle: .alert)
+
+        alert.addTextField()
+
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (action) -> Void in
+            let textField = alert?.textFields![0]
+            guard let goal = textField?.text else { return }
+            if goal == "" {
+                return
+            }
+            Storage.goals.append(goal)
+            self.tableView.reloadData()
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil))
+
+        self.present(alert, animated: true, completion: nil)
     }
     
     func updateData(){
