@@ -1,7 +1,7 @@
 import UIKit
 import paper_onboarding
 
-let background = UIColor(red: 253/255, green: 196/255, blue: 70/255, alpha: 1)
+let background = UIColor(red: 249/255, green: 183/255, blue: 190/255, alpha: 1)
 
 let titleFont = UIFont(name: "AvenirNext-Bold", size: 24)!
 
@@ -13,24 +13,24 @@ class OnboardingViewController: UIViewController {
     
     let screens = [
             OnboardingItemInfo(
-                informationImage: UIImage(systemName: "star.fill")!,
-                title: "Calc your expenses",
-                description: "Icing lemon drops tootsie roll sugar plum. Cheesecake biscuit cupcake chocolate bar pudding chocolate cake. Danish donut sweet toffee.",
-                pageIcon: UIImage(systemName: "star.fill")!,
+                informationImage: UIImage(systemName: "pencil")!,
+                title: "Write that you eat",
+                description: "Our application get possibilities to write and add to favorites your food",
+                pageIcon: UIImage(systemName: "poweroff")!,
+                color: background, titleColor: UIColor.white, descriptionColor: UIColor.white, titleFont: titleFont, descriptionFont: descriptionFont
+            ),
+            OnboardingItemInfo(
+                informationImage: UIImage(systemName: "paperplane")!,
+                title: "Get information about food",
+                description: "You can get knowledge about nutrion, vitamins and others microelements",
+                pageIcon: UIImage(systemName: "poweroff")!,
                 color: background, titleColor: UIColor.white, descriptionColor: UIColor.white, titleFont: titleFont, descriptionFont: descriptionFont
             ),
             OnboardingItemInfo(
                 informationImage: UIImage(systemName: "star.fill")!,
-                title: "Learn you expenses",
-                description: "Icing lemon drops tootsie roll sugar plum. Cheesecake biscuit cupcake chocolate bar pudding chocolate cake. Danish donut sweet toffee.",
-                pageIcon: UIImage(systemName: "star.fill")!,
-                color: background, titleColor: UIColor.white, descriptionColor: UIColor.white, titleFont: titleFont, descriptionFont: descriptionFont
-            ),
-            OnboardingItemInfo(
-                informationImage: UIImage(systemName: "star.fill")!,
-                title: "Achive your goals",
-                description: "Icing lemon drops tootsie roll sugar plum. Cheesecake biscuit cupcake chocolate bar pudding chocolate cake. Danish donut sweet toffee.",
-                pageIcon: UIImage(systemName: "star.fill")!,
+                title: "Analyze data and build your diet!",
+                description: "Calculate nutrients from your dishes and construct future diet and set futher plans",
+                pageIcon: UIImage(systemName: "poweroff")!,
                 color: background, titleColor: UIColor.white, descriptionColor: UIColor.white, titleFont: titleFont, descriptionFont: descriptionFont
             )
         ]
@@ -50,9 +50,18 @@ class OnboardingViewController: UIViewController {
                                                 multiplier: 1,
                                                 constant: 0)
             view.addConstraint(constraint)
-          }
-//        onboardingView.dataSource = self
-//        onboardingView.delegate = self
+        }
+        let button = UIButton()
+        button.frame = CGRect(x: self.view.frame.size.width - 280, y: self.view.frame.size.height - 250, width: 150, height: 50)
+        button.backgroundColor = .systemBlue
+        button.setTitle("Get started!", for: .normal)
+        button.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
+        view.addSubview(button)
+    }
+    
+    @objc private func buttonAction(sender: UIButton!) {
+        let newViewController = (storyboard?.instantiateViewController(withIdentifier: START_SCREEN_IDENTIFIER ))!
+        self.present(newViewController, animated: true, completion: nil)
     }
 }
 
@@ -69,20 +78,4 @@ extension OnboardingViewController : PaperOnboardingDataSource, PaperOnboardingD
     func onboardingConfigurationItem(_ item: OnboardingContentViewItem, index: Int) {
         
     }
-    
-//    func onboardingWillTransitonToIndex(_ index: Int) {
-//        if index != screens.count - 1 {
-//            UIView.animate(withDuration: 0.2, animations: {
-//                self.getStartedButton.alpha = 0
-//            })
-//        }
-//    }
-//
-//    func onboardingDidTransitonToIndex(_ index: Int) {
-//        if index == screens.count - 1 {
-//            UIView.animate(withDuration: 0.4, animations: {
-//                self.getStartedButton.alpha = 1
-//            })
-//        }
-//    }
 }

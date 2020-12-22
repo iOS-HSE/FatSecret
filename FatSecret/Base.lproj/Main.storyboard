@@ -316,7 +316,7 @@
         <!--Onboarding View Controller-->
         <scene sceneID="8Zf-Of-QrA">
             <objects>
-                <viewController restorationIdentifier="OnboardingScreen" storyboardIdentifier="OnboardingScreen" id="n11-gg-D9B" customClass="OnboardingViewController" customModule="FatSecret" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="OnboardingScreen" storyboardIdentifier="OnboardingScreen" modalPresentationStyle="fullScreen" id="n11-gg-D9B" customClass="OnboardingViewController" customModule="FatSecret" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NLf-MZ-XId">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

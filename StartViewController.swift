@@ -21,10 +21,10 @@ class StartViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        goToOnboarding() // for testing
+//        goToOnboarding() // for testing
         guard let uid = UserDefaults.standard.string(forKey: "uid") else {
             if UserDefaults.standard.bool(forKey: "isNotFirstEnter") == false {
-//                UserDefaults.standard.set(true, forKey: "isNotFirstEnter")
+                UserDefaults.standard.set(true, forKey: "isNotFirstEnter")
                 goToOnboarding()
             }
             return

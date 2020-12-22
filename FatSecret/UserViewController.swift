@@ -113,6 +113,7 @@ class UserViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     @IBAction func clickExit(_ sender: Any) {
         UserDefaults.standard.removeObject(forKey: "uid")
+        UserDefaults.standard.removeObject(forKey: "isNotFirstEnter")
 
         let newViewController = (storyboard?.instantiateViewController(withIdentifier: START_SCREEN_IDENTIFIER ))!
         self.present(newViewController, animated: true, completion: nil)
