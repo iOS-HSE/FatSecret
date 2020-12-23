@@ -1,17 +1,9 @@
 import UIKit
 
 class UserViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return Storage.goals.count
-    }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        cell.textLabel?.text = Storage.goals[indexPath.row]
-        return cell
-    }
-    
-    
+    private let START_SCREEN_IDENTIFIER: String = "StartScreen"
+
     @IBAction func addGoal(_ sender: Any) {
         showAddDialog()
     }
@@ -30,7 +22,6 @@ class UserViewController: UIViewController, UITableViewDataSource, UITableViewDe
     @IBOutlet weak var mailField: UITextField!
     @IBOutlet weak var tableView: UITableView!
     
-    private let START_SCREEN_IDENTIFIER: String = "StartScreen"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,6 +34,16 @@ class UserViewController: UIViewController, UITableViewDataSource, UITableViewDe
         mailField.delegate = self
         updateData()
         changeTextFields(isEditingEnabled: false)
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return Storage.goals.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        cell.textLabel?.text = Storage.goals[indexPath.row]
+        return cell
     }
     
     private func handleEdit() {
